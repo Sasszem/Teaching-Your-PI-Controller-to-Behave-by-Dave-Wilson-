@@ -6,3 +6,5 @@ Links of the original articles via [`r/Motors`: Articles by Dave Wilson on Motor
 PDF transcription of articles by me (HA7DN), 2026-03-30 to 2026-04-03. 
 
 All technical and original work is by Dave Wilson.
+
+# [Link to PDF](https://github.com/Sasszem/Teaching-Your-PI-Controller-to-Behave-by-Dave-Wilson-/releases/download/2026-04-03/Teaching-Your-PI-Controller-to-Behave-by-Dave-Wilson.pdf)
