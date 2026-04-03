@@ -1,0 +1,119 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+
+
+\counterwithin{figure}{chapter}
+\renewcommand\thefigure{\arabic{chapter} / \arabic{figure}}
+
+\counterwithin{equation}{chapter}
+\renewcommand\theequation{Equ. \arabic{equation}}
+
+% removing of chapter titles
+% from https://tex.stackexchange.com/a/121464/284352
+\usepackage[pagestyles]{titlesec}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+\newpagestyle{mystyle}
+{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
+\pagestyle{mystyle}
+
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage[magyar]{babel}
+\usepackage{float}
+\usepackage{siunitx}
+\DeclareSIUnit\decade{decade}
+\DeclareSIUnit\rpm{RPM}
+\sisetup{per-mode=symbol}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[x11names]{xcolor}
+\title{Teaching Your PI Controller to Behave \\ \small Technical Article(s)}
+\author{Dave Wilson, Motion Products Evangelist, Texas Instruments}
+\date{2013}
+
+\hypersetup{
+    pdftitle={Teaching Your PI Controller to Behave},
+    pdfauthor={Dave Wilson (PDF created by HA7DN)},
+    pdfsubject={Technical articles},
+    pdfcreator={latex},
+    pdflang=en,
+    pdfkeywords={motor control, pi controller, controller tuning},
+    pdfdisplaydoctitle=true,
+    unicode
+}
+\begin{document}
+    \maketitle
+
+    \include{part_1}
+    \include{part_2}
+    \include{part_3}
+    \include{part_4}
+    \include{part_5}
+    \include{part_6}
+    \include{part_7}
+    \include{part_8}
+    \include{part_9}
+    \include{part_10}
+
+    \chapter*{Notes by HA7DN, editor of this PDF}
+
+    I found one of these articles on the interwebs on 2025 March 31th as a PDF on TI's website (\url{https://www.ti.com/lit/pdf/ssztcg3}). Sadly, it looks like only the first two are available this way (second part at \url{http://www.ti.com/lit/pdf/ssztcg3}).
+
+    I came upon the 2025 reddit post \textit{Articles by Dave Wilson on Motor Control} on \textbf{r/Motors} by user \textbf{u/suhas\_patlolla} (\url{https://www.reddit.com/r/Motors/comments/1iiu62b/articles_by_dave_wilson_on_motor_control/}), where user \textbf{u/PippoCavallo} collected the archive.org links for the articles.
+
+    The original post:
+    \begin{displayquote}[\textbf{u/suhas\_patlolla}]
+        Hello, recently I was going through the youtube video where wilson teaches about old motors new tricks and in that video I have came through his blogs about "Teaching the PI controllers to behave" a 10 part series of blogs and other is "The 10 commandments of Digital Control" which is again a 10 parts.
+
+        I can't find them any where even though the link which says ti.com/motorblogs which is not working now and I could find 2 parts but I want all others so that it will be helpful for me.
+
+        So, if any of you guys know where to get them all or if you have them can please share me.
+
+        I think 2014 guys will have them :)
+    \end{displayquote}
+
+    The response:
+    \begin{displayquote}[\textbf{u/PippoCavallo}]
+        Same of you, I was looking for them after watching the rec of the seminar. In such cases you can try to use Wayback Machine. So beautiful tool that makes me grateful many times. Enjoy!
+
+        \url{https://web.archive.org/web/20131113220619/http://e2e.ti.com/blogs_/b/motordrivecontrol/archive/2013/02/28/teaching-your-pi-controller-to-behave-part-i.aspx}
+
+        \url{https://web.archive.org/web/20131113212704/http://e2e.ti.com/blogs_/b/motordrivecontrol/archive/2013/03/04/teaching-your-pi-controller-to-behave-part-ii.aspx}
+
+        \url{https://web.archive.org/web/20131113205503/http://e2e.ti.com/blogs_/b/motordrivecontrol/archive/2013/03/09/teaching-you-pi-controller-to-behave-part-iii.aspx}
+
+        \url{https://web.archive.org/web/20131113220631/http://e2e.ti.com/blogs_/b/motordrivecontrol/archive/2013/03/14/teaching-your-pi-controller-to-behave-part-iv.aspx}
+
+        \url{https://web.archive.org/web/20131113214729/http://e2e.ti.com/blogs_/b/motordrivecontrol/archive/2013/03/23/teaching-your-pi-controller-to-behave-part-v.aspx}
+
+        \url{https://web.archive.org/web/20131113221525/http://e2e.ti.com/blogs_/b/motordrivecontrol/archive/2013/04/04/teaching-your-pi-controller-to-behave-part-vi.aspx}
+
+        \url{https://web.archive.org/web/20130813082822/http://e2e.ti.com/blogs_/b/motordrivecontrol/archive/2013/04/13/teaching-your-pi-controller-to-behave-part-vii.aspx}
+
+        \url{https://web.archive.org/web/20130813082828/http://e2e.ti.com/blogs_/b/motordrivecontrol/archive/2013/04/14/teaching-your-pi-controller-to-behave-part-viii.aspx}
+
+        \url{https://web.archive.org/web/20130813082842/http://e2e.ti.com/blogs_/b/motordrivecontrol/archive/2013/04/30/teaching-your-pi-controller-to-behave-part-ix.aspx}
+
+        \url{https://web.archive.org/web/20130813082852/http://e2e.ti.com/blogs_/b/motordrivecontrol/archive/2013/05/15/teaching-your-pi-controller-to-behave-part-x.aspx}
+
+        EDIT: this is the spreadsheet referred to in the <Part IX>: \url{https://web.archive.org/web/20180101224106/http://e2e.ti.com/cfs-file/__key/telligent-evolution-components-attachments/13-852-00-00-00-66-49-89/PI-Calculator.xlsx?forcedownload=true}
+    \end{displayquote}
+
+    There was one added note:
+    \begin{displayquote}[\textbf{u/PlethoraProliferator}]
+         there is also a video of a shorted topic still alive at ti: \url{https://www.ti.com/video/3881562077001}
+    \end{displayquote}
+
+    Thanks \textbf{Dave Wilson} for the articles and \textbf{u/PippoCavallo} for finding all the archive.org links!
+
+    All I did was trasnscribing the original texts to \LaTeX. Any typo you may encounter is most likely attributed to me.
+
+    HA7DN 2026
+
+    \chapter*{Contact}
+
+    This PDF along with it's \LaTeX\; sources is available at \url{https://github.com/Sasszem/Teaching-Your-PI-Controller-to-Behave-by-Dave-Wilson-}. You can contact me (HA7DN) via github. If you have spotted an error / mistake in my transcription, you can submit an issue or even better a pull request.
+\end{document}
